@@ -20,7 +20,7 @@ render() {
   );
 }
 ```
-See full example [here](https://github.com/mu29/react-radio-button/blob/master/example/example.js)
+See full example [here](https://github.com/mu29/react-stepper/blob/master/example/example.js)
 
 ## API
 | name     | description    | default    | type     |
