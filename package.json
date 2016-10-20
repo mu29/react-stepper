@@ -1,0 +1,37 @@
+{
+  "name": "react-stepper-horizontal",
+  "version": "1.0.0",
+  "description": "Well-designed stepper component for react",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mu29/react-stepper.git"
+  },
+  "keywords": [
+    "facebook",
+    "react",
+    "component",
+    "react-component",
+    "stepper",
+    "step"
+  ],
+  "author": "InJung Chung <mu29@yeoubi.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mu29/react-stepper/issues"
+  },
+  "homepage": "https://github.com/mu29/react-stepper#readme",
+  "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "webpack": "^1.13.2"
+  },
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  }
+}
