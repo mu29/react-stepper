@@ -41,6 +41,7 @@ export default class Stepper extends Component {
   render() {
     const { steps } = this.props;
     const styles = this.getStyles();
+
     return (
       <div style={ styles.root }>
         <div style={ styles.stepper }>
