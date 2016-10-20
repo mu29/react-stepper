@@ -56,7 +56,7 @@ export default class Step extends Component {
       circle: {
         width: 16,
         height: 16,
-        margin: 0,
+        margin: '0 auto',
         backgroundColor: '#757575',
         borderRadius: '50%',
         textAlign: 'center',

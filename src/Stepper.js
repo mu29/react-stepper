@@ -18,7 +18,7 @@ export default class Stepper extends Component {
       stepper: {
         display: 'table',
         width: '100%',
-        margin: 'auto',
+        margin: '0 auto',
       },
     };
   }
@@ -33,7 +33,7 @@ export default class Stepper extends Component {
       active: index === activeStep,
       completed: index < activeStep,
       first: index === 0,
-      last: index === steps.lenght - 1,
+      last: index === steps.length - 1,
       index,
     });
   }
