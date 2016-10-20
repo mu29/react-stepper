@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "example": "webpack -w -d --config example/webpack.config.js example/example.js example/all.js"
+    "example": "webpack -w -d --config example/webpack.config.js"
   },
   "repository": {
     "type": "git",
