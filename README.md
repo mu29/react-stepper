@@ -11,6 +11,16 @@ Then just add `import Stepper from 'react-stepper-horizontal';` into your file.
 <img src="https://raw.githubusercontent.com/mu29/react-stepper/master/example/example.png" width="600" />
 
 ## Usage
+```
+render() {
+  return (
+    <div>
+      <Stepper steps={ ['Step One', 'Step Two', 'Step Three', 'Step Four'] } activeStep={ 1 } />
+    </div>
+  );
+}
+```
+See full example [here](https://github.com/mu29/react-radio-button/blob/master/example/example.js)
 
 ## API
 | name     | description    | default    | type     |
