@@ -23,8 +23,19 @@ export default class Stepper extends Component {
     };
   }
 
-  renderStep() {
+  renderStep(index) {
+    const { activeStep, steps } = this.props;
+    const step = steps[index];
 
+    return React.createElement(Step, {
+      width: 100 / steps.length,
+      title: step,
+      active: index === activeStep,
+      completed: index < activeStep,
+      first: index === 0,
+      last: index === steps.lenght - 1,
+      index,
+    });
   }
 
   render() {
