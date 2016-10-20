@@ -62,6 +62,10 @@ export default class Stepper extends Component {
   }
 }
 
+Stepper.defaultProps = {
+  activeStep: 0,
+};
+
 Stepper.propTypes = {
   activeStep: PropTypes.number,
   steps: PropTypes.array,
