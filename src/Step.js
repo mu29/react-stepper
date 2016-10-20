@@ -8,8 +8,9 @@ export default class Step extends Component {
 
   getStyles() {
     const {
-      activeColor, completeColor, defaultColor,
-      size, circleFontSize, fontSize,
+      activeColor, completeColor, defaultColor, circleFontColor,
+      activeTitleColor, completeTitleColor, defaultTitleColor,
+      size, circleFontSize, titleFontSize,
       circleTop, titleTop, width,
     } = this.props;
 
@@ -29,7 +30,7 @@ export default class Step extends Component {
         textAlign: 'center',
         padding: 1,
         fontSize: circleFontSize,
-        color: '#424242',
+        color: circleFontColor,
         display: 'block',
       },
       activeCircle: {
@@ -43,16 +44,16 @@ export default class Step extends Component {
       },
       title: {
         marginTop: titleTop,
-        fontSize: fontSize,
+        fontSize: titleFontSize,
         fontWeight: '300',
         textAlign: 'center',
-        color: defaultColor,
+        color: defaultTitleColor,
       },
       activeTitle: {
-        color: activeColor,
+        color: activeTitleColor,
       },
       completedTitle: {
-        color: completeColor,
+        color: completeTitleColor,
       },
       leftBar: {
         position: 'absolute',
@@ -95,7 +96,7 @@ export default class Step extends Component {
     const titleStyle = Object.assign(
       styles.title,
       completed ? styles.completedTitle : {},
-      active ? styles.activetitle : {},
+      active ? styles.activeTitle : {},
     );
     const leftStyle = Object.assign(styles.leftBar, (active || completed) ? styles.completedBar : {});
     const rightStyle = Object.assign(styles.rightBar, completed ? styles.completedBar : {});
@@ -114,12 +115,16 @@ export default class Step extends Component {
 }
 
 Step.defaultProps = {
-  activeColor: '#FFF',
-  completeColor: '#FFF',
-  defaultColor: '#757575',
+  activeColor: '#5096FF',
+  completeColor: '#5096FF',
+  defaultColor: '#E0E0E0',
+  activeTitleColor: '#000',
+  completeTitleColor: '#000',
+  defaultTitleColor: '#757575',
+  circleFontColor: '#FFF',
   size: 32,
   circleFontSize: 16,
-  fontSize: 16,
+  titleFontSize: 16,
   circleTop: 24,
   titleTop: 8,
 };
@@ -129,9 +134,13 @@ Step.propTypes = {
   activeColor: PropTypes.string,
   completeColor: PropTypes.string,
   defaultColor: PropTypes.string,
+  activeTitleColor: PropTypes.string,
+  completeTitleColor: PropTypes.string,
+  defaultTitleColor: PropTypes.string,
+  circleFontColor: PropTypes.string,
   size: PropTypes.number,
   circleFontSize: PropTypes.number,
-  fontSize: PropTypes.number,
+  titleFontSize: PropTypes.number,
   circleTop: PropTypes.number,
   titleTop: PropTypes.number,
   title: PropTypes.string,

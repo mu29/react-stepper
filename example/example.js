@@ -6,9 +6,9 @@ import Stepper from '../src/index.js';
 
 let App = React.createClass({
   render() {
-    const steps = ['Step One', 'Step Two', 'Step Three'];
+    const steps = ['Step One', 'Step Two', 'Step Three', 'Step Four'];
     return (
-      <div style={ { background: '#424242', height: 200 } }>
+      <div style={ { height: 200, width: 600 } }>
         <Stepper steps={ steps } activeStep={ 1 } />
       </div>
     );

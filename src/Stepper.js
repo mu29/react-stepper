@@ -26,8 +26,9 @@ export default class Stepper extends Component {
   renderStep(index) {
     const {
       activeStep, steps,
-      activeColor, completeColor, defaultColor,
-      size, circleFontSize, fontSize,
+      activeColor, completeColor, defaultColor, circleFontColor,
+      activeTitleColor, completeTitleColor, defaultTitleColor,
+      size, circleFontSize, titleFontSize,
       circleTop, titleTop,
     } = this.props;
     const step = steps[index];
@@ -40,8 +41,9 @@ export default class Stepper extends Component {
       first: index === 0,
       last: index === steps.length - 1,
       index,
-      activeColor, completeColor, defaultColor,
-      size, circleFontSize, fontSize,
+      activeColor, completeColor, defaultColor, circleFontColor,
+      activeTitleColor, completeTitleColor, defaultTitleColor,
+      size, circleFontSize, titleFontSize,
       circleTop, titleTop,
     });
   }
@@ -66,9 +68,13 @@ Stepper.propTypes = {
   activeColor: PropTypes.string,
   completeColor: PropTypes.string,
   defaultColor: PropTypes.string,
+  activeTitleColor: PropTypes.string,
+  completeTitleColor: PropTypes.string,
+  defaultTitleColor: PropTypes.string,
+  circleFontColor: PropTypes.string,
   size: PropTypes.number,
   circleFontSize: PropTypes.number,
-  fontSize: PropTypes.number,
+  titleFontSize: PropTypes.number,
   circleTop: PropTypes.number,
   titleTop: PropTypes.number,
 };
