@@ -7,66 +7,79 @@ export default class Step extends Component {
   }
 
   getStyles() {
-    const { width, padding } = this.props;
+    const {
+      activeColor, completeColor, defaultColor,
+      size, circleFontSize, fontSize,
+      circleTop, titleTop, width,
+    } = this.props;
 
     return {
       step: {
         width: `${width}%`,
         display: 'table-cell',
         position: 'relative',
-        paddingTop: padding,
+        paddingTop: circleTop,
+      },
+      circle: {
+        width: size,
+        height: size,
+        margin: '0 auto',
+        backgroundColor: defaultColor,
+        borderRadius: '50%',
+        textAlign: 'center',
+        padding: 1,
+        fontSize: circleFontSize,
+        color: '#424242',
+        display: 'block',
+      },
+      activeCircle: {
+        backgroundColor: activeColor,
+      },
+      completedCircle: {
+        backgroundColor: completeColor,
+      },
+      index: {
+        lineHeight: `${size + circleFontSize / 4}px`,
       },
       title: {
-        marginTop: 8,
-        fontSize: 12,
+        marginTop: titleTop,
+        fontSize: fontSize,
         fontWeight: '300',
         textAlign: 'center',
-        color: '#757575',
+        color: defaultColor,
+      },
+      activeTitle: {
+        color: activeColor,
       },
       completedTitle: {
-        color: '#FFF',
+        color: completeColor,
       },
       leftBar: {
         position: 'absolute',
-        top: 32,
+        top: circleTop + size / 2,
         height: 1,
         borderTopStyle: 'solid',
         borderTopWidth: 1,
-        borderTopColor: '#757575',
+        borderTopColor: defaultColor,
         left: 0,
         right: '50%',
-        marginRight: 8,
+        marginRight: size / 2 + 1,
       },
       rightBar: {
         position: 'absolute',
-        top: 32,
+        top: circleTop + size / 2,
         height: 1,
         borderTopStyle: 'solid',
         borderTopWidth: 1,
-        borderTopColor: '#757575',
+        borderTopColor: defaultColor,
         right: 0,
         left: '50%',
-        marginLeft: 8,
+        marginLeft: size / 2 + 1,
       },
       completedBar: {
         borderTopStyle: 'solid',
         borderTopWidth: 1,
-        borderTopColor: '#FFF',
-      },
-      circle: {
-        width: 16,
-        height: 16,
-        margin: '0 auto',
-        backgroundColor: '#757575',
-        borderRadius: '50%',
-        textAlign: 'center',
-        padding: 1,
-        fontSize: 10,
-        color: '#424242',
-        display: 'block',
-      },
-      active: {
-        backgroundColor: '#FFF',
+        borderTopColor: completeColor,
       },
     };
   }
@@ -74,14 +87,24 @@ export default class Step extends Component {
   render() {
     const { title, index, active, completed, first, last } = this.props;
     const styles = this.getStyles();
-    const circleStyle = Object.assign(styles.circle, (active || completed) ? styles.active : {});
-    const titleStyle = Object.assign(styles.title, (active || completed) ? styles.completedTitle : {});
+    const circleStyle = Object.assign(
+      styles.circle,
+      completed ? styles.completedCircle : {},
+      active ? styles.activeCircle : {},
+    );
+    const titleStyle = Object.assign(
+      styles.title,
+      completed ? styles.completedTitle : {},
+      active ? styles.activetitle : {},
+    );
     const leftStyle = Object.assign(styles.leftBar, (active || completed) ? styles.completedBar : {});
     const rightStyle = Object.assign(styles.rightBar, completed ? styles.completedBar : {});
 
     return (
       <div style={ styles.step }>
-        <div style={ circleStyle }>{ index + 1 }</div>
+        <div style={ circleStyle }>
+          <span style={ styles.index }>{ index + 1 }</span>
+        </div>
         <div style={ titleStyle }>{ title }</div>
         { !first && <div style={ leftStyle }></div> }
         { !last && <div style={ rightStyle }></div> }
@@ -91,12 +114,26 @@ export default class Step extends Component {
 }
 
 Step.defaultProps = {
-  padding: 24,
+  activeColor: '#FFF',
+  completeColor: '#FFF',
+  defaultColor: '#757575',
+  size: 32,
+  circleFontSize: 16,
+  fontSize: 16,
+  circleTop: 24,
+  titleTop: 8,
 };
 
 Step.propTypes = {
-  width: PropTypes.number,
-  padding: PropTypes.number,
+  width: PropTypes.number.isRequired,
+  activeColor: PropTypes.string,
+  completeColor: PropTypes.string,
+  defaultColor: PropTypes.string,
+  size: PropTypes.number,
+  circleFontSize: PropTypes.number,
+  fontSize: PropTypes.number,
+  circleTop: PropTypes.number,
+  titleTop: PropTypes.number,
   title: PropTypes.string,
   index: PropTypes.number,
   active: PropTypes.boolean,
