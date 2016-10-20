@@ -11,14 +11,14 @@ export default class Stepper extends Component {
   getStyles() {
     return {
       root: {
-        width: '100%';
-        minHeight: 0;
-        padding: 0;
+        width: '100%',
+        minHeight: 0,
+        padding: 0,
       },
       stepper: {
-        display: 'table';
-        width: '100%';
-        margin: 'auto';
+        display: 'table',
+        width: '100%',
+        margin: 'auto',
       },
     };
   }

@@ -25,9 +25,9 @@ export default class Step extends Component {
       },
       completedTitle: {
         color: '#FFF',
-      }
+      },
       leftBar: {
-        position: 'absolute';
+        position: 'absolute',
         top: 32,
         height: 1,
         borderTopStyle: 'solid',
@@ -38,7 +38,7 @@ export default class Step extends Component {
         marginRight: 8,
       },
       rightBar: {
-        position: 'absolute';
+        position: 'absolute',
         top: 32,
         height: 1,
         borderTopStyle: 'solid',
@@ -54,19 +54,19 @@ export default class Step extends Component {
         borderTopColor: '#FFF',
       },
       circle: {
-        width: 16;
-        height: 16;
-        margin: 0;
-        backgroundColor: '#757575';
-        borderRadius: '50%';
-        textAlign: 'center';
-        padding: 1;
-        fontSize: 10;
-        color: '#424242';
-        display: 'block';
+        width: 16,
+        height: 16,
+        margin: 0,
+        backgroundColor: '#757575',
+        borderRadius: '50%',
+        textAlign: 'center',
+        padding: 1,
+        fontSize: 10,
+        color: '#424242',
+        display: 'block',
       },
       active: {
-        backgroundColor: '#FFF';
+        backgroundColor: '#FFF',
       },
     };
   }
