@@ -3,10 +3,10 @@ import React, { Component, PropTypes } from 'react';
 export default class Step extends Component {
   constructor() {
     super();
-    this.getStyle = this.getStyle.bind(this);
+    this.getStyles = this.getStyles.bind(this);
   }
 
-  getStyle() {
+  getStyles() {
     const { width, padding } = this.props;
 
     return {
@@ -69,6 +69,24 @@ export default class Step extends Component {
         backgroundColor: '#FFF';
       },
     };
+  }
+
+  render() {
+    const { title, index, active, completed, first, last } = this.props;
+    const styles = this.getStyles();
+    const circleStyle = Object.assign(styles.circle, (active || completed) ? styles.active : {});
+    const titleStyle = Object.assign(styles.title, (active || completed) ? styles.completedTitle : {});
+    const leftStyle = Object.assign(styles.leftBar, (active || completed) ? styles.completedBar : {});
+    const rightStyle = Object.assign(styles.rightBar, completed ? styles.completedBar : {});
+
+    return (
+      <div style={ styles.step }>
+        <div style={ circleStyle }>{ index + 1 }</div>
+        <div style={ titleStyle }>{ title }</div>
+        { !first && <div style={ leftStyle }></div> }
+        { !last && <div style={ rightStyle }></div> }
+      </div>
+    );
   }
 }
 
