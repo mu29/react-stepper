@@ -34,6 +34,9 @@
     "babel-preset-react": "^6.16.0",
     "webpack": "^1.13.2"
   },
+  "engines": {
+    "node": ">= 5.11.0"
+  },
   "dependencies": {
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
