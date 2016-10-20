@@ -2,10 +2,10 @@
   "name": "react-stepper-horizontal",
   "version": "1.0.0",
   "description": "Well-designed stepper component for react",
-  "main": "lib/Stepper.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build-lib": "webpack --mode=build",
+    "build-lib": "babel src --out-dir lib",
     "prerelease": "npm run build-lib",
     "example": "webpack -w -d --config example/webpack.config.js"
   },
