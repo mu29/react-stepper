@@ -1,9 +1,11 @@
 module.exports = {
-  entry: './src/index.js',
+  entry: __dirname + '/src/index.js',
   output: {
-    path: './lib',
-    filename: 'index.js',
-  }
+    path: __dirname + '/lib',
+    filename: 'Stepper.js',
+    library: 'Stepper',
+    libraryTarget: 'umd',
+  },
   module: {
     loaders: [
       {
