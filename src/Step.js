@@ -41,12 +41,14 @@ export default class Step extends Component {
       },
       index: {
         lineHeight: `${size + circleFontSize / 4}px`,
+        color: circleFontColor
       },
       title: {
         marginTop: titleTop,
         fontSize: titleFontSize,
         fontWeight: '300',
         textAlign: 'center',
+        display: 'block',
         color: defaultTitleColor,
       },
       activeTitle: {
@@ -86,7 +88,8 @@ export default class Step extends Component {
   }
 
   render() {
-    const { title, index, active, completed, first, last } = this.props;
+    const { title, index, active, completed, first, isLast, href, onClick } = this.props;
+    
     const styles = this.getStyles();
     const circleStyle = Object.assign(
       styles.circle,
@@ -104,11 +107,19 @@ export default class Step extends Component {
     return (
       <div style={ styles.step }>
         <div style={ circleStyle }>
+        {active || completed ? (
+          <a href={href} onClick={onClick} style={ styles.index }>{ index + 1 }</a>
+        ) : (
           <span style={ styles.index }>{ index + 1 }</span>
+        )}
         </div>
-        <div style={ titleStyle }>{ title }</div>
+        {active || completed ? (
+          <a href={href} onClick={onClick} style={ titleStyle }>{ title }</a>
+        ) : (
+          <div style={ titleStyle }>{ title }</div>
+        )}
         { !first && <div style={ leftStyle }></div> }
-        { !last && <div style={ rightStyle }></div> }
+        { !isLast && <div style={ rightStyle }></div> }
       </div>
     );
   }
@@ -145,8 +156,8 @@ Step.propTypes = {
   titleTop: PropTypes.number,
   title: PropTypes.string,
   index: PropTypes.number,
-  active: PropTypes.boolean,
-  completed: PropTypes.boolean,
-  first: PropTypes.boolean,
-  last: PropTypes.boolean,
+  active: PropTypes.bool,
+  completed: PropTypes.bool,
+  first: PropTypes.bool,
+  isLast: PropTypes.bool,
 };
