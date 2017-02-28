@@ -8,7 +8,35 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      steps: ['Step One', 'Step Two', 'Step Three', 'Step Four'],
+      steps: [{
+        title: 'Step One',
+        href: 'http://example1.com',
+        onClick: (e) => {
+          e.preventDefault()
+          console.log('onClick', 1)
+        }
+      }, {
+        title: 'Step Two',
+        href: 'http://example2.com',
+        onClick: (e) => {
+          e.preventDefault()
+          console.log('onClick', 2)
+        }
+      }, {
+        title: 'Step Three',
+        href: 'http://example3.com',
+        onClick: (e) => {
+          e.preventDefault()
+          console.log('onClick', 3)
+        }
+      }, {
+        title: 'Step Four',
+        href: 'http://example4.com',
+        onClick: (e) => {
+          e.preventDefault()
+          console.log('onClick', 4)
+        }
+      }],
       currentStep: 0,
     };
     this.onClickNext = this.onClickNext.bind(this);
@@ -17,7 +45,6 @@ class App extends Component {
   onClickNext() {
     const { steps, currentStep } = this.state;
     this.setState({
-      steps: steps.map((s, i) => (i == currentStep ? `${s} Completed` : s)),
       currentStep: currentStep + 1,
     });
   }
