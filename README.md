@@ -15,7 +15,7 @@ Then just add `import Stepper from 'react-stepper-horizontal';` into your file.
 render() {
   return (
     <div>
-      <Stepper steps={ ['Step One', 'Step Two', 'Step Three', 'Step Four'] } activeStep={ 1 } />
+      <Stepper steps={ [{title: 'Step One'}, {title: 'Step Two'}, {title: 'Step Three'}, {title: 'Step Four'}] } activeStep={ 1 } />
     </div>
   );
 }
@@ -39,6 +39,12 @@ See full example [here](https://github.com/mu29/react-stepper/blob/master/exampl
 |titleFontSize|Title text size|16|number|
 |circleTop|Top margin of `Stepper` component|24|number|
 |titleTop|Space between circle and title|8|number|
+|defaultOpacity|Default cirlce opacity|1|string|
+|completeOpacity|Completed cirlce opacity|1|string|
+|activeOpacity|Active cirlce opacity|1|string|
+|defaultTitleOpacity|Default title opacity|1|string|
+|completeTitleOpacity|Completed title opacity|1|string|
+|activeTitleOpacity|Active title opacity|1|string|
 
 
 ## Author
