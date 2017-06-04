@@ -20,7 +20,7 @@ function Stepper({
   activeColor, completeColor, defaultColor, circleFontColor,
   activeTitleColor, completeTitleColor, defaultTitleColor,
   size, circleFontSize, titleFontSize,
-  circleTop, titleTop, completeOpcaity, activeOpacity, defaultOpcaity,
+  circleTop, titleTop, completeOpacity, activeOpacity, defaultOpcaity,
   completeTitleOpacity, activeTitleOpacity, defaultTitleOpacity
 }) {
   return (
@@ -51,7 +51,7 @@ function Stepper({
             circleTop={circleTop}
             titleTop={titleTop}
             defaultOpcaity={defaultOpcaity}
-            completeOpcaity={completeOpcaity}
+            completeOpacity={completeOpacity}
             activeOpacity={activeOpacity}
             defaultTitleOpacity={defaultTitleOpacity}
             completeTitleOpacity={completeTitleOpacity}
