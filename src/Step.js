@@ -11,7 +11,8 @@ export default class Step extends Component {
       activeColor, completeColor, defaultColor, circleFontColor,
       activeTitleColor, completeTitleColor, defaultTitleColor,
       size, circleFontSize, titleFontSize,
-      circleTop, titleTop, width,
+      circleTop, titleTop, width, completeOpcaity, activeOpacity, defaultOpcaity,
+      completeTitleOpacity, activeTitleOpacity, defaultTitleOpacity
     } = this.props;
 
     return {
@@ -32,12 +33,15 @@ export default class Step extends Component {
         fontSize: circleFontSize,
         color: circleFontColor,
         display: 'block',
+        opacity: defaultOpcaity,
       },
       activeCircle: {
         backgroundColor: activeColor,
+        opacity: activeOpacity,
       },
       completedCircle: {
         backgroundColor: completeColor,
+        opacity: completeOpcaity,
       },
       index: {
         lineHeight: `${size + circleFontSize / 4}px`,
@@ -50,12 +54,15 @@ export default class Step extends Component {
         textAlign: 'center',
         display: 'block',
         color: defaultTitleColor,
+        opacity: defaultTitleOpacity,
       },
       activeTitle: {
         color: activeTitleColor,
+        opacity: activeTitleOpacity,
       },
       completedTitle: {
         color: completeTitleColor,
+        opacity: completeTitleOpacity,
       },
       leftBar: {
         position: 'absolute',
@@ -67,6 +74,7 @@ export default class Step extends Component {
         left: 0,
         right: '50%',
         marginRight: size / 2 + 1,
+        opacity: defaultOpcaity,
       },
       rightBar: {
         position: 'absolute',
@@ -78,18 +86,20 @@ export default class Step extends Component {
         right: 0,
         left: '50%',
         marginLeft: size / 2 + 1,
+        opacity: defaultOpcaity,
       },
       completedBar: {
         borderTopStyle: 'solid',
         borderTopWidth: 1,
         borderTopColor: completeColor,
+        opacity: completeOpcaity,
       },
     };
   }
 
   render() {
     const { title, index, active, completed, first, isLast, href, onClick } = this.props;
-    
+
     const styles = this.getStyles();
     const circleStyle = Object.assign(
       styles.circle,
