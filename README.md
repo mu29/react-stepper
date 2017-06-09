@@ -45,6 +45,7 @@ See full example [here](https://github.com/mu29/react-stepper/blob/master/exampl
 |defaultTitleOpacity|Default title opacity|1|string|
 |completeTitleOpacity|Completed title opacity|1|string|
 |activeTitleOpacity|Active title opacity|1|string|
+|barStyle|Style of bar seperating steps|solid|string|
 
 
 ## Author
