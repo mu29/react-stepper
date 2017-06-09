@@ -87,10 +87,10 @@ Stepper.propTypes = {
   defaultOpcaity: PropTypes.string,
   completeOpacity: PropTypes.string,
   activeOpacity: PropTypes.string,
-  defaultTitleOpacity: PropTypes.string
-  completeTitleOpacity: PropTypes.string
-  activeTitleOpacity: PropTypes.string
-  barStyle: PropTypes.string
+  defaultTitleOpacity: PropTypes.string,
+  completeTitleOpacity: PropTypes.string,
+  activeTitleOpacity: PropTypes.string,
+  barStyle: PropTypes.string,
 };
 
 export default Stepper;
