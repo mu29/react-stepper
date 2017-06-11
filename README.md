@@ -4,7 +4,7 @@ Well-designed stepper component for react
 ## Installation
 ```
 npm install react-stepper-horizontal --save
-``` 
+```
 Then just add `import Stepper from 'react-stepper-horizontal';` into your file.
 
 ## Screenshot
@@ -45,7 +45,15 @@ See full example [here](https://github.com/mu29/react-stepper/blob/master/exampl
 |defaultTitleOpacity|Default title opacity|1|string|
 |completeTitleOpacity|Completed title opacity|1|string|
 |activeTitleOpacity|Active title opacity|1|string|
-|barStyle|Style of bar seperating steps|solid|string|
+|barStyle|Style of bar separating steps|solid|string|
+|defaultBorderColor|Default color of border surrounding circle||string|
+|completeBorderColor|Color of border surrounding completed circle||string|
+|activeBorderColor|Color of border surrounding active circle||string|
+|defaultBorderStyle|Default style of border surrounding circle|solid|string|
+|completeBorderStyle|Style of border surrounding completed circle|solid|string|
+|activeBorderStyle|Style of border surrounding active circle|solid|string|
+|defaultBarColor|Default color of bar separating circles|#E0E0E0|string|
+
 
 
 ## Author

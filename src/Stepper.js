@@ -22,7 +22,9 @@ function Stepper({
   activeTitleColor, completeTitleColor, defaultTitleColor,
   size, circleFontSize, titleFontSize,
   circleTop, titleTop, completeOpacity, activeOpacity, defaultOpcaity,
-  completeTitleOpacity, activeTitleOpacity, defaultTitleOpacity, barStyle
+  completeTitleOpacity, activeTitleOpacity, defaultTitleOpacity, barStyle, barColor,
+  defaultBorderColor, completeBorderColor, activeBorderColor, defaultBorderStyle,
+  completeBorderStyle, activeBorderStyle,
 }) {
   return (
     <div style={ styles.root }>
@@ -58,6 +60,7 @@ function Stepper({
             completeTitleOpacity={completeTitleOpacity}
             activeTitleOpacity={activeTitleOpacity}
             barStyle={barStyle}
+            barColor={barColor}
             defaultBorderColor={defaultBorderColor}
             completeBorderColor={completeBorderColor}
             activeBorderColor={activeBorderColor}
@@ -97,6 +100,7 @@ Stepper.propTypes = {
   completeTitleOpacity: PropTypes.string,
   activeTitleOpacity: PropTypes.string,
   barStyle: PropTypes.string,
+  barColor: PropTypes.string,
   defaultBorderColor: PropTypes.string,
   completeBorderColor: PropTypes.string,
   activeBorderColor: PropTypes.string,
