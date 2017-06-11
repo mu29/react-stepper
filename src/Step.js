@@ -13,7 +13,9 @@ export default class Step extends Component {
       activeTitleColor, completeTitleColor, defaultTitleColor,
       size, circleFontSize, titleFontSize,
       circleTop, titleTop, width, completeOpacity, activeOpacity, defaultOpcaity,
-      completeTitleOpacity, activeTitleOpacity, defaultTitleOpacity, barStyle
+      completeTitleOpacity, activeTitleOpacity, defaultTitleOpacity, barStyle,
+      defaultBorderColor, completeBorderColor, activeBorderColor, defaultBorderStyle,
+      completeBorderStyle, activeBorderStyle,
     } = this.props;
 
     return {
@@ -35,14 +37,21 @@ export default class Step extends Component {
         color: circleFontColor,
         display: 'block',
         opacity: defaultOpcaity,
+        borderWidth: (defaultBorderColor ? 4 : 0),
+        borderColor: defaultBorderColor,
+        borderStyle: defaultBorderStyle || 'solid',
       },
       activeCircle: {
         backgroundColor: activeColor,
         opacity: activeOpacity,
+        borderColor: activeBorderColor,
+        borderStyle: activeBorderStyle,
       },
       completedCircle: {
         backgroundColor: completeColor,
         opacity: completeOpacity,
+        borderColor: completeBorderColor,
+        borderStyle: completeBorderStyle,
       },
       index: {
         lineHeight: `${size + circleFontSize / 4}px`,
@@ -177,5 +186,11 @@ Step.propTypes = {
   completeTitleOpacity: PropTypes.string,
   activeTitleOpacity: PropTypes.string,
   defaultTitleOpacity: PropTypes.string,
-  barStyle: PropTypes.string
+  barStyle: PropTypes.string,
+  defaultBorderColor: PropTypes.string,
+  completeBorderColor: PropTypes.string,
+  activeBorderColor: PropTypes.string,
+  defaultBorderStyle: PropTypes.string,
+  completeBorderStyle: PropTypes.string,
+  activeBorderStyle: PropTypes.string
 };

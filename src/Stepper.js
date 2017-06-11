@@ -58,6 +58,12 @@ function Stepper({
             completeTitleOpacity={completeTitleOpacity}
             activeTitleOpacity={activeTitleOpacity}
             barStyle={barStyle}
+            defaultBorderColor={defaultBorderColor}
+            completeBorderColor={completeBorderColor}
+            activeBorderColor={activeBorderColor}
+            defaultBorderStyle={defaultBorderStyle}
+            completeBorderStyle={completeBorderStyle}
+            activeBorderStyle={activeBorderStyle}
           />
         )) }
       </div>
@@ -91,6 +97,12 @@ Stepper.propTypes = {
   completeTitleOpacity: PropTypes.string,
   activeTitleOpacity: PropTypes.string,
   barStyle: PropTypes.string,
+  defaultBorderColor: PropTypes.string,
+  completeBorderColor: PropTypes.string,
+  activeBorderColor: PropTypes.string,
+  defaultBorderStyle: PropTypes.string,
+  completeBorderStyle: PropTypes.string,
+  activeBorderStyle: PropTypes.string,
 };
 
 export default Stepper;
