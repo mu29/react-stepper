@@ -13,9 +13,9 @@ export default class Step extends Component {
       activeTitleColor, completeTitleColor, defaultTitleColor,
       size, circleFontSize, titleFontSize,
       circleTop, titleTop, width, completeOpacity, activeOpacity, defaultOpcaity,
-      completeTitleOpacity, activeTitleOpacity, defaultTitleOpacity, barStyle, barColor,
-      defaultBorderColor, completeBorderColor, activeBorderColor, defaultBorderStyle,
-      completeBorderStyle, activeBorderStyle
+      completeTitleOpacity, activeTitleOpacity, defaultTitleOpacity, barStyle, defaultBarColor,
+      completeBarColor, defaultBorderColor, completeBorderColor, activeBorderColor,
+      defaultBorderStyle,completeBorderStyle, activeBorderStyle
     } = this.props;
 
     return {
@@ -82,7 +82,7 @@ export default class Step extends Component {
         height: 1,
         borderTopStyle: barStyle,
         borderTopWidth: 1,
-        borderTopColor: barColor,
+        borderTopColor: defaultBarColor,
         left: 0,
         right: '50%',
         marginRight: size / 2 + 4,
@@ -94,7 +94,7 @@ export default class Step extends Component {
         height: 1,
         borderTopStyle: barStyle,
         borderTopWidth: 1,
-        borderTopColor: barColor,
+        borderTopColor: defaultBarColor,
         right: 0,
         left: '50%',
         marginLeft: size / 2 + 4,
@@ -103,7 +103,7 @@ export default class Step extends Component {
       completedBar: {
         borderTopStyle: barStyle,
         borderTopWidth: 1,
-        borderTopColor: barColor,
+        borderTopColor: completeBarColor,
         opacity: completeOpacity,
       },
     };
@@ -160,7 +160,7 @@ Step.defaultProps = {
   titleFontSize: 16,
   circleTop: 24,
   titleTop: 8,
-  barColor: '#E0E0E0',
+  defaultBarColor: '#E0E0E0',
   barStyle: 'solid',
   borderStyle: 'solid',
 };
@@ -192,7 +192,8 @@ Step.propTypes = {
   activeTitleOpacity: PropTypes.string,
   defaultTitleOpacity: PropTypes.string,
   barStyle: PropTypes.string,
-  barColor: PropTypes.string,
+  defaultBarColor: PropTypes.string,
+  completeBarColor: PropTypes.string,
   defaultBorderColor: PropTypes.string,
   completeBorderColor: PropTypes.string,
   activeBorderColor: PropTypes.string,
