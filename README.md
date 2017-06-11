@@ -39,9 +39,9 @@ See full example [here](https://github.com/mu29/react-stepper/blob/master/exampl
 |titleFontSize|Title text size|16|number|
 |circleTop|Top margin of `Stepper` component|24|number|
 |titleTop|Space between circle and title|8|number|
-|defaultOpacity|Default cirlce opacity|1|string|
-|completeOpacity|Completed cirlce opacity|1|string|
-|activeOpacity|Active cirlce opacity|1|string|
+|defaultOpacity|Default circle opacity|1|string|
+|completeOpacity|Completed circle opacity|1|string|
+|activeOpacity|Active circle opacity|1|string|
 |defaultTitleOpacity|Default title opacity|1|string|
 |completeTitleOpacity|Completed title opacity|1|string|
 |activeTitleOpacity|Active title opacity|1|string|
@@ -53,7 +53,7 @@ See full example [here](https://github.com/mu29/react-stepper/blob/master/exampl
 |completeBorderStyle|Style of border surrounding completed circle|solid|string|
 |activeBorderStyle|Style of border surrounding active circle|solid|string|
 |defaultBarColor|Default color of bar separating circles|#E0E0E0|string|
-
+|completeBarColor|Color of bar connected to a completed step|#E0E0E0|string|
 
 
 ## Author
