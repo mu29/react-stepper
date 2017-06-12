@@ -21,7 +21,7 @@ function Stepper({
   activeColor, completeColor, defaultColor, circleFontColor,
   activeTitleColor, completeTitleColor, defaultTitleColor,
   size, circleFontSize, titleFontSize,
-  circleTop, titleTop, completeOpacity, activeOpacity, defaultOpcaity,
+  circleTop, titleTop, completeOpacity, activeOpacity, defaultOpacity,
   completeTitleOpacity, activeTitleOpacity, defaultTitleOpacity, barStyle,
   defaultBorderColor, completeBorderColor, activeBorderColor, defaultBorderStyle,
   completeBorderStyle, activeBorderStyle, defaultBarColor, completeBarColor
@@ -53,7 +53,7 @@ function Stepper({
             titleFontSize={titleFontSize}
             circleTop={circleTop}
             titleTop={titleTop}
-            defaultOpcaity={defaultOpcaity}
+            defaultOpacity={defaultOpacity}
             completeOpacity={completeOpacity}
             activeOpacity={activeOpacity}
             defaultTitleOpacity={defaultTitleOpacity}
@@ -94,7 +94,7 @@ Stepper.propTypes = {
   titleFontSize: PropTypes.number,
   circleTop: PropTypes.number,
   titleTop: PropTypes.number,
-  defaultOpcaity: PropTypes.string,
+  defaultOpacity: PropTypes.string,
   completeOpacity: PropTypes.string,
   activeOpacity: PropTypes.string,
   defaultTitleOpacity: PropTypes.string,
