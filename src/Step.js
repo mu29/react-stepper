@@ -12,7 +12,7 @@ export default class Step extends Component {
       activeColor, completeColor, defaultColor, circleFontColor,
       activeTitleColor, completeTitleColor, defaultTitleColor,
       size, circleFontSize, titleFontSize,
-      circleTop, titleTop, width, completeOpacity, activeOpacity, defaultOpcaity,
+      circleTop, titleTop, width, completeOpacity, activeOpacity, defaultOpacity,
       completeTitleOpacity, activeTitleOpacity, defaultTitleOpacity, barStyle, defaultBarColor,
       completeBarColor, defaultBorderColor, completeBorderColor, activeBorderColor,
       defaultBorderStyle,completeBorderStyle, activeBorderStyle
@@ -36,7 +36,7 @@ export default class Step extends Component {
         fontSize: circleFontSize,
         color: circleFontColor,
         display: 'block',
-        opacity: defaultOpcaity,
+        opacity: defaultOpacity,
         borderWidth: (defaultBorderColor ? 3 : 0),
         borderColor: defaultBorderColor,
         borderStyle: defaultBorderStyle
@@ -86,7 +86,7 @@ export default class Step extends Component {
         left: 0,
         right: '50%',
         marginRight: size / 2 + 4,
-        opacity: defaultOpcaity,
+        opacity: defaultOpacity,
       },
       rightBar: {
         position: 'absolute',
@@ -98,7 +98,7 @@ export default class Step extends Component {
         right: 0,
         left: '50%',
         marginLeft: size / 2 + 4,
-        opacity: defaultOpcaity,
+        opacity: defaultOpacity,
       },
       completedBar: {
         borderTopStyle: barStyle,
@@ -187,7 +187,7 @@ Step.propTypes = {
   isLast: PropTypes.bool,
   completeOpacity: PropTypes.string,
   activeOpacity: PropTypes.string,
-  defaultOpcaity: PropTypes.string,
+  defaultOpacity: PropTypes.string,
   completeTitleOpacity: PropTypes.string,
   activeTitleOpacity: PropTypes.string,
   defaultTitleOpacity: PropTypes.string,
