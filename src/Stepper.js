@@ -17,7 +17,7 @@ const styles = {
 };
 
 function Stepper({
-  activeStep, steps,
+  activeStep, steps, disabledSteps,
   activeColor, completeColor, defaultColor, circleFontColor,
   activeTitleColor, completeTitleColor, defaultTitleColor,
   size, circleFontSize, titleFontSize,
@@ -36,8 +36,8 @@ function Stepper({
             title={step.title}
             href={step.href}
             onClick={step.onClick}
-            active={index === activeStep}
-            completed={index < activeStep}
+            active={!(disabledSteps || []).includes(index) && index === activeStep}
+            completed={!(disabledSteps || []).includes(index) && index < activeStep}
             first={index === 0}
             isLast={index === steps.length - 1}
             index={index}

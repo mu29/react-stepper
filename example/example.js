@@ -23,7 +23,7 @@ class App extends Component {
           console.log('onClick', 2)
         }
       }, {
-        title: 'Step Three',
+        title: 'Step Three (Disabled)',
         href: 'http://example3.com',
         onClick: (e) => {
           e.preventDefault()
@@ -55,7 +55,7 @@ class App extends Component {
 
     return (
       <div>
-        <Stepper steps={ steps } activeStep={ currentStep } />
+        <Stepper steps={ steps } activeStep={ currentStep } disabledSteps={ [2] } />
         <div style={ buttonStyle } onClick={ this.onClickNext }>Next</div>
       </div>
     );
