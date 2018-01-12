@@ -23,10 +23,13 @@ render() {
 See full example [here](https://github.com/mu29/react-stepper/blob/master/example/example.js)
 
 ## API
+
+### Main Component
+
 | name     | description    | default    | type     |
 |----------|----------------|--------------|--------|
 |activeStep|Active step index, starts at 0|0|number|
-|steps|List of steps, must be string array||array|
+|steps|List of step objects (see below)||array|
 |activeColor|Active circle color|#5096FF|string|
 |completeColor|Completed circle color|#5096FF|string|
 |defaultColor|Default circle color - not active or completed|#E0E0E0|string|
@@ -54,6 +57,13 @@ See full example [here](https://github.com/mu29/react-stepper/blob/master/exampl
 |activeBorderStyle|Style of border surrounding active circle|solid|string|
 |defaultBarColor|Default color of bar separating circles|#E0E0E0|string|
 |completeBarColor|Color of bar connected to a completed step|#E0E0E0|string|
+
+### Step Objects
+| name     | description    | default    | type   |
+|----------|----------------|------------|--------|
+|title|Displayed text of the step below the number|undefined|string|
+|href|Link to send them to on click|undefined|string|
+|onClick|Event handler for when the step is clicked|undefined|function|
 
 
 ## Author
