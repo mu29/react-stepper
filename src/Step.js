@@ -110,7 +110,7 @@ export default class Step extends Component {
   }
 
   render() {
-    const { title, index, active, completed, first, isLast, href, onClick } = this.props;
+    const { title, icon, index, active, completed, first, isLast, href, onClick } = this.props;
 
     const styles = this.getStyles();
     const circleStyle = Object.assign(
@@ -126,13 +126,15 @@ export default class Step extends Component {
     const leftStyle = Object.assign(styles.leftBar, (active || completed) ? styles.completedBar : {});
     const rightStyle = Object.assign(styles.rightBar, completed ? styles.completedBar : {});
 
+    const stepContent = icon ? <img src={icon} alt={index + 1} /> : index + 1;
+
     return (
       <div style={ styles.step }>
         <div style={ circleStyle }>
         {active || completed ? (
-          <a href={href} onClick={onClick} style={ styles.index }>{ index + 1 }</a>
+          <a href={href} onClick={onClick} style={ styles.index }>{ stepContent }</a>
         ) : (
-          <span style={ styles.index }>{ index + 1 }</span>
+          <span style={ styles.index }>{ stepContent }</span>
         )}
         </div>
         {active || completed ? (
