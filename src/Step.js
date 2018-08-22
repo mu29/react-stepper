@@ -85,7 +85,7 @@ export default class Step extends Component {
         borderTopColor: defaultBarColor,
         left: 0,
         right: '50%',
-        marginRight: size / 2 + 0, // xxx
+        marginRight: size / 2 + 4, // xxx
         opacity: defaultOpacity,
       },
       rightBar: {
@@ -97,7 +97,7 @@ export default class Step extends Component {
         borderTopColor: defaultBarColor,
         right: 0,
         left: '50%',
-        marginLeft: size / 2 + 0, // xxx
+        marginLeft: size / 2 + 4, // xxx
         opacity: defaultOpacity,
       },
       completedBar: {
