@@ -15,7 +15,7 @@ export default class Step extends Component {
       circleTop, titleTop, width, completeOpacity, activeOpacity, defaultOpacity,
       completeTitleOpacity, activeTitleOpacity, defaultTitleOpacity, barStyle, defaultBarColor,
       completeBarColor, defaultBorderColor, completeBorderColor, activeBorderColor,
-      defaultBorderStyle,completeBorderStyle, activeBorderStyle, lineMarginOffset
+      defaultBorderStyle,completeBorderStyle, activeBorderStyle, lineMarginOffset, defaultBorderWidth
     } = this.props;
 
     return {
@@ -37,21 +37,21 @@ export default class Step extends Component {
         color: circleFontColor,
         display: 'block',
         opacity: defaultOpacity,
-        borderWidth: (defaultBorderColor ? 3 : 0),
+        borderWidth: (defaultBorderColor ? defaultBorderWidth : 0),
         borderColor: defaultBorderColor,
         borderStyle: defaultBorderStyle
       },
       activeCircle: {
         backgroundColor: activeColor,
         opacity: activeOpacity,
-        borderWidth: (activeBorderColor ? 3 : 0),
+        borderWidth: (activeBorderColor ? defaultBorderWidth : 0),
         borderColor: activeBorderColor,
         borderStyle: activeBorderStyle,
       },
       completedCircle: {
         backgroundColor: completeColor,
         opacity: completeOpacity,
-        borderWidth: (completeBorderColor ? 3 : 0),
+        borderWidth: (completeBorderColor ? defaultBorderWidth : 0),
         borderColor: completeBorderColor,
         borderStyle: completeBorderStyle,
       },
@@ -126,7 +126,7 @@ export default class Step extends Component {
     const leftStyle = Object.assign(styles.leftBar, (active || completed) ? styles.completedBar : {});
     const rightStyle = Object.assign(styles.rightBar, completed ? styles.completedBar : {});
 
-    const stepContent = icon ? <img src={icon} alt={index + 1} /> : index + 5;
+    const stepContent = icon ? <img src={icon} alt={index + 1} /> : index + 1;
 
     return (
       <div style={ styles.step }>
@@ -165,7 +165,8 @@ Step.defaultProps = {
   defaultBarColor: '#E0E0E0',
   barStyle: 'solid',
   borderStyle: 'solid',
-  lineMarginOffset: 4
+  lineMarginOffset: 4,
+  defaultBorderWidth: 3
 };
 
 Step.propTypes = {
@@ -203,5 +204,6 @@ Step.propTypes = {
   defaultBorderStyle: PropTypes.string,
   completeBorderStyle: PropTypes.string,
   activeBorderStyle: PropTypes.string,
-  lineMarginOffset: PropTypes.number
+  lineMarginOffset: PropTypes.number,
+  defaultBorderWidth: PropTypes.number
 };
