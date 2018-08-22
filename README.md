@@ -57,6 +57,7 @@ See full example [here](https://github.com/mu29/react-stepper/blob/master/exampl
 |activeBorderStyle|Style of border surrounding active circle|solid|string|
 |defaultBarColor|Default color of bar separating circles|#E0E0E0|string|
 |completeBarColor|Color of bar connected to a completed step|#E0E0E0|string|
+|lineMarginOffset|Offset for line margin|4|number|
 
 ### Step Objects
 | name     | description    | default    | type   |
