@@ -15,7 +15,7 @@ export default class Step extends Component {
       circleTop, titleTop, width, completeOpacity, activeOpacity, defaultOpacity,
       completeTitleOpacity, activeTitleOpacity, defaultTitleOpacity, barStyle, defaultBarColor,
       completeBarColor, defaultBorderColor, completeBorderColor, activeBorderColor,
-      defaultBorderStyle,completeBorderStyle, activeBorderStyle
+      defaultBorderStyle,completeBorderStyle, activeBorderStyle, lineMarginOffset, defaultBorderWidth
     } = this.props;
 
     return {
@@ -37,21 +37,21 @@ export default class Step extends Component {
         color: circleFontColor,
         display: 'block',
         opacity: defaultOpacity,
-        borderWidth: (defaultBorderColor ? 3 : 0),
+        borderWidth: (defaultBorderColor ? defaultBorderWidth : 0),
         borderColor: defaultBorderColor,
         borderStyle: defaultBorderStyle
       },
       activeCircle: {
         backgroundColor: activeColor,
         opacity: activeOpacity,
-        borderWidth: (activeBorderColor ? 3 : 0),
+        borderWidth: (activeBorderColor ? defaultBorderWidth : 0),
         borderColor: activeBorderColor,
         borderStyle: activeBorderStyle,
       },
       completedCircle: {
         backgroundColor: completeColor,
         opacity: completeOpacity,
-        borderWidth: (completeBorderColor ? 3 : 0),
+        borderWidth: (completeBorderColor ? defaultBorderWidth : 0),
         borderColor: completeBorderColor,
         borderStyle: completeBorderStyle,
       },
@@ -85,7 +85,7 @@ export default class Step extends Component {
         borderTopColor: defaultBarColor,
         left: 0,
         right: '50%',
-        marginRight: size / 2 + 4,
+        marginRight: size / 2 + lineMarginOffset,
         opacity: defaultOpacity,
       },
       rightBar: {
@@ -97,7 +97,7 @@ export default class Step extends Component {
         borderTopColor: defaultBarColor,
         right: 0,
         left: '50%',
-        marginLeft: size / 2 + 4,
+        marginLeft: size / 2 + lineMarginOffset,
         opacity: defaultOpacity,
       },
       completedBar: {
@@ -110,7 +110,7 @@ export default class Step extends Component {
   }
 
   render() {
-    const { title, index, active, completed, first, isLast, href, onClick } = this.props;
+    const { title, icon, index, active, completed, first, isLast, href, onClick } = this.props;
 
     const styles = this.getStyles();
     const circleStyle = Object.assign(
@@ -126,13 +126,15 @@ export default class Step extends Component {
     const leftStyle = Object.assign(styles.leftBar, (active || completed) ? styles.completedBar : {});
     const rightStyle = Object.assign(styles.rightBar, completed ? styles.completedBar : {});
 
+    const stepContent = icon ? <img src={icon} alt={index + 1} /> : index + 1;
+
     return (
       <div style={ styles.step }>
         <div style={ circleStyle }>
         {active || completed ? (
-          <a href={href} onClick={onClick} style={ styles.index }>{ index + 1 }</a>
+          <a href={href} onClick={onClick} style={ styles.index }>{ stepContent }</a>
         ) : (
-          <span style={ styles.index }>{ index + 1 }</span>
+          <span style={ styles.index }>{ stepContent }</span>
         )}
         </div>
         {active || completed ? (
@@ -163,6 +165,8 @@ Step.defaultProps = {
   defaultBarColor: '#E0E0E0',
   barStyle: 'solid',
   borderStyle: 'solid',
+  lineMarginOffset: 4,
+  defaultBorderWidth: 3
 };
 
 Step.propTypes = {
@@ -199,5 +203,7 @@ Step.propTypes = {
   activeBorderColor: PropTypes.string,
   defaultBorderStyle: PropTypes.string,
   completeBorderStyle: PropTypes.string,
-  activeBorderStyle: PropTypes.string
+  activeBorderStyle: PropTypes.string,
+  lineMarginOffset: PropTypes.number,
+  defaultBorderWidth: PropTypes.number
 };

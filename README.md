@@ -57,11 +57,14 @@ See full example [here](https://github.com/mu29/react-stepper/blob/master/exampl
 |activeBorderStyle|Style of border surrounding active circle|solid|string|
 |defaultBarColor|Default color of bar separating circles|#E0E0E0|string|
 |completeBarColor|Color of bar connected to a completed step|#E0E0E0|string|
+|lineMarginOffset|Offset for line margin|4|number|
+|defaultBorderWidth|Default Border Width|3|number|
 
 ### Step Objects
 | name     | description    | default    | type   |
 |----------|----------------|------------|--------|
 |title|Displayed text of the step below the number|undefined|string|
+|icon|Displayed icon of the step|undefined|image/object|
 |href|Link to send them to on click|undefined|string|
 |onClick|Event handler for when the step is clicked|undefined|function|
 
