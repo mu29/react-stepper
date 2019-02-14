@@ -24,7 +24,8 @@ function Stepper({
   circleTop, titleTop, completeOpacity, activeOpacity, defaultOpacity,
   completeTitleOpacity, activeTitleOpacity, defaultTitleOpacity, barStyle,
   defaultBorderColor, completeBorderColor, activeBorderColor, defaultBorderStyle,
-  completeBorderStyle, activeBorderStyle, defaultBarColor, completeBarColor, lineMarginOffset, defaultBorderWidth
+  completeBorderStyle, activeBorderStyle, defaultBarColor, completeBarColor, lineMarginOffset, defaultBorderWidth,
+  circleLineHeight
 }) {
   return (
     <div style={ styles.root }>
@@ -51,6 +52,7 @@ function Stepper({
             defaultTitleColor={defaultTitleColor}
             size={size}
             circleFontSize={circleFontSize}
+            circleLineHeight={circleLineHeight}
             titleFontSize={titleFontSize}
             circleTop={circleTop}
             titleTop={titleTop}
@@ -94,6 +96,7 @@ Stepper.propTypes = {
   circleFontColor: PropTypes.string,
   size: PropTypes.number,
   circleFontSize: PropTypes.number,
+  circleLineHeight: PropTypes.number,
   titleFontSize: PropTypes.number,
   circleTop: PropTypes.number,
   titleTop: PropTypes.number,
