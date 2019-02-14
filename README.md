@@ -39,6 +39,7 @@ See full example [here](https://github.com/mu29/react-stepper/blob/master/exampl
 |circleFontColor|Circle text color (for index)|#FFF|string|
 |size|Circle size|32|number|
 |circleFontSize|Circle text size|16|number|
+|circleLineHeight|Circle line height||number|
 |titleFontSize|Title text size|16|number|
 |circleTop|Top margin of `Stepper` component|24|number|
 |titleTop|Space between circle and title|8|number|
